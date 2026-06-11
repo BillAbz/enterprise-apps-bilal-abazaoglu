@@ -1,6 +1,7 @@
 package be.ehb.enterpriseappbilalabazaoglu.controller;
 
 import be.ehb.enterpriseappbilalabazaoglu.model.Event;
+import be.ehb.enterpriseappbilalabazaoglu.model.Location;
 import be.ehb.enterpriseappbilalabazaoglu.repository.EventRepository;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-
+@RequestMapping("/events")
 public class EventController {
     private final EventRepository eventRepository;
 
@@ -17,16 +18,19 @@ public class EventController {
         this.eventRepository = eventRepository;
     }
 
-    @GetMapping({"/", "/events"})
+    @GetMapping
     public String index(Model model) {
         model.addAttribute("events", eventRepository.findTop10ByOrderByDateDesc());
         return "index";
     }
 
-    @GetMapping("/events/new")
+    @GetMapping("/new")
     public String newEvent(Model model) {
-        model.addAttribute("event", new Event());
-        return "events/new";
+        Event event = new Event();
+        event.setLocation(new Location());
+
+        model.addAttribute("event", event);
+        return "new";
     }
 
     @PostMapping("/new")
@@ -43,7 +47,7 @@ public class EventController {
         return "redirect:/events";
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public String details(@PathVariable Long id, Model model) {
         Event event = eventRepository.findById(id).orElse(null);
 
@@ -52,7 +56,7 @@ public class EventController {
         }
         model.addAttribute("event", event);
 
-        return "events/details";
+        return "details";
     }
 
 }

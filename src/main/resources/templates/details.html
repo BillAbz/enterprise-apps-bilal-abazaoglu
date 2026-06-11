@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details - Anderlecht Community NGO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main class="container mx-auto px-6 py-10 flex-grow max-w-3xl">
+
+    <div class="bg-white shadow-md rounded-lg p-8">
+
+        <h1 class="text-3xl font-bold text-gray-800 mb-6"
+            th:text="${event.title}">
+            Event Title
+        </h1>
+
+        <div class="space-y-4">
+
+            <p>
+                <span class="font-semibold">Description:</span>
+                <span th:text="${event.description}">
+                    Event description
+                </span>
+            </p>
+
+            <p>
+                <span class="font-semibold">Organisation:</span>
+                <span th:text="${event.organisation}">
+                    Organisation
+                </span>
+            </p>
+
+            <p>
+                <span class="font-semibold">Contact email:</span>
+                <span th:text="${event.contactEmail}">
+                    contact@example.com
+                </span>
+            </p>
+
+            <p>
+                <span class="font-semibold">Date and time:</span>
+                <span th:text="${#temporals.format(event.date, 'dd-MM-yyyy HH:mm')}">
+                    15-06-2026 18:00
+                </span>
+            </p>
+
+            <hr class="my-6">
+
+            <h2 class="text-xl font-bold text-gray-800">
+                Location
+            </h2>
+
+            <p>
+                <span class="font-semibold">Name:</span>
+                <span th:text="${event.location.name}">
+                    Location name
+                </span>
+            </p>
+
+            <p>
+                <span class="font-semibold">Address:</span>
+                <span th:text="${event.location.address}">
+                    Address
+                </span>
+            </p>
+
+            <p>
+                <span class="font-semibold">Capacity:</span>
+                <span th:text="${event.location.capacity}">
+                    50
+                </span>
+            </p>
+
+        </div>
+
+        <div class="mt-8">
+            <a th:href="@{/events}"
+               class="bg-green-700 text-white px-5 py-2 rounded hover:bg-green-800">
+                Back to events
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>
