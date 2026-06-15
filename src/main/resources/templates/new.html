@@ -12,20 +12,20 @@
 
 <main class="container mx-auto px-6 py-10 flex-grow max-w-3xl">
 
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Add New Event</h1>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Nieuw evenement toevoegen</h1>
 
     <form th:action="@{/events/new}" th:object="${event}" method="post"
           class="bg-white shadow-md rounded-lg p-8 space-y-5">
 
         <div>
-            <label class="block font-semibold mb-1">Title</label>
+            <label class="block font-semibold mb-1">Titel</label>
             <input type="text" th:field="*{title}" class="w-full border rounded px-4 py-2">
             <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"
                class="text-red-600 text-sm mt-1"></p>
         </div>
 
         <div>
-            <label class="block font-semibold mb-1">Description</label>
+            <label class="block font-semibold mb-1">Beschrijving</label>
             <textarea th:field="*{description}" rows="4"
                       class="w-full border rounded px-4 py-2"></textarea>
             <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
@@ -33,7 +33,7 @@
         </div>
 
         <div>
-            <label class="block font-semibold mb-1">Organisation</label>
+            <label class="block font-semibold mb-1">Organisatie</label>
             <input type="text" th:field="*{organisation}" class="w-full border rounded px-4 py-2">
             <p th:if="${#fields.hasErrors('organisation')}" th:errors="*{organisation}"
                class="text-red-600 text-sm mt-1"></p>
@@ -47,7 +47,7 @@
         </div>
 
         <div>
-            <label class="block font-semibold mb-1">Date and Time</label>
+            <label class="block font-semibold mb-1">Datum en tijd</label>
             <input type="datetime-local" th:field="*{date}" class="w-full border rounded px-4 py-2">
             <p th:if="${#fields.hasErrors('date')}" th:errors="*{date}"
                class="text-red-600 text-sm mt-1"></p>
@@ -55,30 +55,30 @@
 
         <hr>
 
-        <h2 class="text-xl font-bold text-gray-800">Location</h2>
+        <h2 class="text-xl font-bold text-gray-800">Locatie</h2>
 
         <div>
-            <label class="block font-semibold mb-1">Location Name</label>
+            <label class="block font-semibold mb-1">Naam locatie</label>
             <input type="text" th:field="*{location.name}" class="w-full border rounded px-4 py-2">
         </div>
 
         <div>
-            <label class="block font-semibold mb-1">Address</label>
+            <label class="block font-semibold mb-1">Adres</label>
             <input type="text" th:field="*{location.address}" class="w-full border rounded px-4 py-2">
         </div>
 
         <div>
-            <label class="block font-semibold mb-1">Capacity</label>
+            <label class="block font-semibold mb-1">Capaciteit</label>
             <input type="number" th:field="*{location.capacity}" class="w-full border rounded px-4 py-2">
         </div>
 
         <div class="flex justify-between pt-4">
             <a th:href="@{/events}" class="bg-gray-300 text-gray-800 px-5 py-2 rounded hover:bg-gray-400">
-                Cancel
+                Annuleren
             </a>
 
             <button type="submit" class="bg-green-700 text-white px-5 py-2 rounded hover:bg-green-800">
-                Save Event
+                Evenement opslaan
             </button>
         </div>
 

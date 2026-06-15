@@ -15,12 +15,12 @@
     <div class="bg-white shadow-md rounded-lg p-8">
 
         <h1 class="text-3xl font-bold text-gray-800 mb-6">
-            Contact Us
+            Neem contact met ons op
         </h1>
 
         <p class="text-gray-600 mb-6">
-            Do you have a question or would you like to contact our organisation?
-            Send us a message using the form below.
+            Heeft u een vraag of wilt u contact opnemen met onze organisatie?
+            Stuur ons dan een bericht via het onderstaande formulier.
         </p>
 
         <div th:if="${successMessage}"
@@ -35,7 +35,7 @@
 
             <div>
                 <label class="block font-semibold mb-1">
-                    Name
+                    Naam
                 </label>
 
                 <input type="text"
@@ -63,7 +63,7 @@
 
             <div>
                 <label class="block font-semibold mb-1">
-                    Message
+                    Bericht
                 </label>
 
                 <textarea th:field="*{message}"
@@ -77,7 +77,7 @@
 
             <button type="submit"
                     class="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800">
-                Send Message
+                Bericht verzenden
             </button>
 
         </form>

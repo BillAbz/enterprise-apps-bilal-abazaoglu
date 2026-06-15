@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Event Details - Anderlecht Community NGO</title>
+    <title>Details evenement - Anderlecht Community NGO<</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -16,22 +16,22 @@
 
         <h1 class="text-3xl font-bold text-gray-800 mb-6"
             th:text="${event.title}">
-            Event Title
+            Evenement Title
         </h1>
 
         <div class="space-y-4">
 
             <p>
-                <span class="font-semibold">Description:</span>
+                <span class="font-semibold">Omschrijving:</span>
                 <span th:text="${event.description}">
-                    Event description
+                    Evenement Omschrijving
                 </span>
             </p>
 
             <p>
-                <span class="font-semibold">Organisation:</span>
+                <span class="font-semibold">Organisatie:</span>
                 <span th:text="${event.organisation}">
-                    Organisation
+                    Organisatie
                 </span>
             </p>
 
@@ -43,7 +43,7 @@
             </p>
 
             <p>
-                <span class="font-semibold">Date and time:</span>
+                <span class="font-semibold">Datum en tijd:</span>
                 <span th:text="${#temporals.format(event.date, 'dd-MM-yyyy HH:mm')}">
                     15-06-2026 18:00
                 </span>
@@ -56,21 +56,21 @@
             </h2>
 
             <p>
-                <span class="font-semibold">Name:</span>
+                <span class="font-semibold">Naam:</span>
                 <span th:text="${event.location.name}">
-                    Location name
+                    Locatie Naam
                 </span>
             </p>
 
             <p>
-                <span class="font-semibold">Address:</span>
+                <span class="font-semibold">Adres:</span>
                 <span th:text="${event.location.address}">
-                    Address
+                    Adres
                 </span>
             </p>
 
             <p>
-                <span class="font-semibold">Capacity:</span>
+                <span class="font-semibold">Capaciteit:</span>
                 <span th:text="${event.location.capacity}">
                     50
                 </span>
@@ -81,7 +81,7 @@
         <div class="mt-8">
             <a th:href="@{/events}"
                class="bg-green-700 text-white px-5 py-2 rounded hover:bg-green-800">
-                Back to events
+                Terug naar evenementen
             </a>
         </div>
 
