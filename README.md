@@ -74,16 +74,16 @@ Spring Boot Documentation: https://spring.io/projects/spring-boot
 Thymeleaf Documentation: https://www.thymeleaf.org/documentation.html
 Spring Data JPA Documentation: https://spring.io/projects/spring-data-jpa
 Tailwind CSS Documentation: https://tailwindcss.com/docs
+
+
+
 AI Usage
 
-ChatGPT was used to:
+ChatGPT was used during the development of this project for learning, debugging and code review purposes.
 
-Explain Spring Boot concepts
-Review code structure
-Assist with debugging
-Improve HTML and Thymeleaf templates
+An overview of the AI-assisted development activities can be found in the file:
 
-All generated code was reviewed, tested and adapted before being included in the final project.
+AI_CHAT_HISTORY.md
 
 Author
 
